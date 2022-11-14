@@ -1,6 +1,5 @@
 import streamlit as st
 from cpf import CPF
-from pyUFbr.baseuf import ufbr
 
 cpf_tool = CPF()
 
@@ -26,7 +25,7 @@ def Validar_CPF():
 
 def Gerar_CPF():
     st.subheader('Gerador de CPF')
-    estado = st.selectbox('Escolha o estado', ['QUALQUER UM'] + ufbr.list_uf)
+    estado = st.selectbox('Escolha o estado', ['QUALQUER UM'] + list(cpf_tool.estados.keys()))
     formatar =  st.radio('Formatar CPF', ['Sim', 'Não'], horizontal = True)
     container = st.container()
     if st.button('Gerar CPF'):

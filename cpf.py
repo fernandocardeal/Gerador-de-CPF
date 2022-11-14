@@ -2,7 +2,7 @@ from random import randint as rand
 
 class CPF:
     def __init__(self):
-        self.tabela = {
+        self.estados = {
             'AC': 2,
             'AL': 4,
             'AP': 2,
@@ -43,8 +43,8 @@ class CPF:
     def cpf_generator(self, estado = False):
         while True:
             cpf = [rand(0, 9) for x in range(9)]
-            if estado in self.tabela:
-                cpf[8] = self.tabela[estado]
+            if estado in self.estados:
+                cpf[8] = self.estados[estado]
             if cpf != cpf[::-1]:
                 break
         for y in [10, 11]:
