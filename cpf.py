@@ -45,7 +45,7 @@ class CPF:
             cpf = [rand(0, 9) for x in range(9)]
             if estado in self.estados:
                 cpf[8] = self.estados[estado]
-            if cpf != cpf[::-1]:
+            if not all(x == cpf[0] for x in cpf):
                 break
         for y in [10, 11]:
             cpf.append(sum([cpf[y - x] * x for x in range(y, 1, -1)]) * 10 % 11 % 10)
