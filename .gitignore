@@ -1,0 +1,5 @@
+testes.ipynb
+*/__pycache__
+*/migrations
+venv
+db.sqlite3
