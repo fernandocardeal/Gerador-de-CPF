@@ -75,13 +75,22 @@ A API estará disponível em `http://localhost:8000/api/cpf/`.
 
 ## Uso da API
 
+### Gerando CPFs
+
 Você pode usar esta API para gerar CPFs formatados e não formatados com base no estado. Acesse a seguinte URL em seu navegador ou use uma ferramenta como o Postman:
 
-- Gerar um CPF padrão: `http://localhost:8000/api/cpf/`
+- Gerar um CPF padrão: `http://localhost:8000/cpf/gerar/`
 
-- Gerar um CPF com base no estado: `http://localhost:8000/api/cpf/?estado=SP`
+- Gerar um CPF com base no estado: `http://localhost:8000/cpf/gerar/?estado=<estado>`
 
-Certifique-se de fornecer o parâmetro `estado` na URL para gerar um CPF específico do estado desejado. Se o parâmetro `estado` não for fornecido, a API gerará um CPF padrão.
+Certifique-se de fornecer o parâmetro `<estado>` na URL para gerar um CPF específico do estado desejado. Se o parâmetro `<estado>` não for fornecido, a API gerará um CPF padrão.
+
+### Validando CPFs
+Agora você usar a API para validar um CPF qualquer, passando-o como parâmetro via GET. Acesse a URL em seu navegador ou com ferramentas como o Postman:
+
+- Valide um CPF: `http://localhost:8000/cpf/validar/?cpf=<cpf>`
+
+Certifique-se de fornecer o parâmetro `<cpf>` na URL para que a validação seja bem sucedida.
 
 ## Contribuindo
 

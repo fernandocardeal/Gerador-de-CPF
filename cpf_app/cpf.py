@@ -3,27 +3,41 @@ from random import randint as rand
 class CPF:
     def __init__(self):
         self.estados = {
-            0: ["DF", "RS"],
-            1: ["GO", "MT", "MS", "TO"],
-            2: ["AC", "AP", "AM", "PA", "RO", "RR"],
+            0: ["RS"],
+            1: ["DF", "GO", "MS", "MT", "TO"],
+            2: ["AC", "AM", "AP", "PA", "RO", "RR"],
             3: ["CE", "MA", "PI"],
             4: ["AL", "PB", "PE", "RN"],
             5: ["BA", "SE"],
             6: ["MG"],
             7: ["ES", "RJ"],
             8: ["SP"],
+            9: ["PR", "SC"]
         }
 
-    '''    
-    def cpf_validator(self, cpf):
+    
+    def validar_cpf(self, cpf):
+        str_cpf = cpf
         cpf = [int(x) for x in cpf if x.isnumeric()]
-        if True in [len(cpf) != 11, cpf == cpf[::-1]]:
-            return False
+
+        cpf_invalido_mensagem = {
+                    "estado":False,
+                    "mensagem":f"o cpf '{str_cpf}' não passou na validação",
+                    "cpf": str_cpf
+                }
+        
+        if any([len(cpf) != 11, all(x == cpf[0] for x in cpf)]):
+            return cpf_invalido_mensagem
+        
         for y in [10, 11]:
             if cpf[y - 1] != sum([cpf[y - x] * x for x in range(y, 1, -1)]) * 10 % 11 % 10:
-                return False
-        return True
-    '''
+                return cpf_invalido_mensagem
+            
+        return {
+            "estado":True,
+            "mensagem":f"o cpf '{str_cpf}' passou na validação",
+            "cpf": self.formatar_cpf(str_cpf)
+        }
     
     def gerar_cpf(self, estado = None):
         while True:
