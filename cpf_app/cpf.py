@@ -25,19 +25,26 @@ class CPF:
         return True
     '''
     
-    def cpf_generator(self, estado = False):
+    def gerar_cpf(self, estado = None):
         while True:
             cpf = [rand(0, 9) for x in range(9)]
-            for reg in self.estados:
-                if estado in self.estados[reg]:
-                    cpf[8] = reg
-                    break
+            if estado:
+                estado_valido = False
+                for reg in self.estados:
+                    if estado.upper() in self.estados[reg]:
+                        cpf[8], estado_valido = reg, True
+                        break
+                if not estado_valido:
+                    return None
             if not all(x == cpf[0] for x in cpf):
                 break
-
         for y in [10, 11]:
             cpf.append(sum([cpf[y - x] * x for x in range(y, 1, -1)]) * 10 % 11 % 10)
-        return ''.join([str(x) for x in cpf])
+        cpf = ''.join([str(x) for x in cpf])
+        return {
+            0: cpf,
+            1: self.formatar_cpf(cpf)
+        }
 
-    def cpf_formatter(self, cpf):
+    def formatar_cpf(self, cpf):
         return f'{cpf[:3]}.{cpf[3:6]}.{cpf[6:9]}-{cpf[9:]}'

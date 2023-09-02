@@ -1,7 +1,7 @@
 # minhaapp/urls.py
 from django.urls import path
-from .views import CPFView
+from .views import CPFCreate
 
 urlpatterns = [
-    path('', CPFView.as_view(), name='gerar-cpf'),
+    path('gerar/', CPFCreate.as_view(), name='gerar-cpf'),
 ]
