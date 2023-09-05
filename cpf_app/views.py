@@ -1,4 +1,3 @@
-# minhaapp/views.py
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .cpf import CPF
@@ -25,5 +24,5 @@ class CPFValidate(APIView):
             return Response(data=cpf_data, status=200)
         return Response({
             "mensagem":"parâmetro ?cpf=<cpf> necessário para validação.",
-            "exemplo":"http://127.0.0.1:8000/cpf/validar/?cpf=94728067831"
+            "exemplo":"http://127.0.0.1:8000/api/cpf/validar/?cpf=94728067831"
             }, status=400)
