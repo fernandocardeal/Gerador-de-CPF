@@ -20,7 +20,6 @@ class CPFValidate(APIView):
         cpf = request.query_params.get("cpf")
         if cpf:
             cpf_data = cpf_tool.validar_cpf(cpf)
-            print(cpf_data)
             return Response(data=cpf_data, status=200)
         return Response({
             "mensagem":"parâmetro ?cpf=<cpf> necessário para validação.",

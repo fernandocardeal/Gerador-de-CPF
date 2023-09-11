@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'cpf_app',
+    'corsheaders',
+    'cpf_api',
+    'cpf_gui',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +51,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:8000",
 ]
 
 ROOT_URLCONF = 'doc_tools.urls'

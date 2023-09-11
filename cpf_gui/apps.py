@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class CpfAppConfig(AppConfig):
+class CpfGuiConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'cpf_app'
+    name = 'cpf_gui'

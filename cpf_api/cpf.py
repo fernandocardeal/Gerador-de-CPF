@@ -23,7 +23,8 @@ class CPF:
         cpf_invalido_mensagem = {
                     "estado":False,
                     "mensagem":f"o cpf '{str_cpf}' não passou na validação",
-                    "cpf": str_cpf
+                    0: str_cpf,
+                    1: str_cpf
                 }
         
         if any([len(cpf) != 11, all(x == cpf[0] for x in cpf)]):
@@ -36,7 +37,8 @@ class CPF:
         return {
             "estado":True,
             "mensagem":f"o cpf '{str_cpf}' passou na validação",
-            "cpf": self.formatar_cpf(str_cpf)
+            0: str_cpf,
+            1: self.formatar_cpf(str_cpf)
         }
     
     def gerar_cpf(self, estado = None):
