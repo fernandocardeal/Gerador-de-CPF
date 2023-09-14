@@ -1,8 +1,11 @@
 var cpfData = ["00000000000","000.000.000-00"]
 document.getElementById("cpf-box").value = cpfData[0]
+var estado;
 
 const gerarCpf = () => {
-    fetch("http://127.0.0.1:8000/api/cpf/gerar/")
+    var select = document.getElementById("estados");
+    estado = select.options[select.selectedIndex].value;
+    fetch(`http://127.0.0.1:8000/api/cpf/gerar/?estado=${estado}`)
     .then(response => {
         if(!response.ok) {
             throw new Error("Erro na requisição")

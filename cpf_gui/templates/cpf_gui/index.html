@@ -14,13 +14,19 @@
     <div class="container">
         <div class="content-box">
             <input type="text" class="cpf-box" id="cpf-box">
+            <select class="cpf-box" name="estados" id="estados">
+                <option value="RS">RS</option>
+                <option value="SP">SP</option>
+                <option value="RN">RN</option>
+                <option value="PR">PR</option>
+            </select>
         </div>
-        <div class="content-box">
-            <input type="button" class="btn-sec" value="Formatar CPF" onclick="formatarCpf()">
-            <input type="button" class="btn-sec" value="Validar CPF" onclick="validarCpf()">
-        </div>
-        <div class="content-box">
-            <input type="button" class="btn-pri" value="Gerar CPF" onclick="gerarCpf()">
+        <div class="container">
+            <div class="row">
+                <input type="button" class="btn-sec" value="Formatar CPF" onclick="formatarCpf()"/>
+                <input type="button" class="btn-sec" value="Validar CPF" onclick="validarCpf()"/>
+            </div>
+            <input type="button" class="btn-pri full-width" value="Gerar CPF" onclick="gerarCpf()"/>
         </div>
     </div>
     <script src="{% static 'js/script.js' %}"></script>
