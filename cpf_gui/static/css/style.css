@@ -29,6 +29,25 @@ body {
     padding: 5vh;
 }
 
+    .container input,
+    .container select {
+        margin: 10px;
+    }
+
+    .container .row {
+        display: flex;
+        justify-content: center;
+        }
+        
+    .container button {
+    margin: 10px;
+    }
+
+    .container .full-width {
+    width: calc(100% - 6px); /* Subtract padding */
+    padding: 0 3px;
+    }
+
 .content-box {
     padding: 1.5vh;
     width: 30vw;

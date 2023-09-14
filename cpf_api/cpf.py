@@ -59,7 +59,8 @@ class CPF:
         cpf = ''.join([str(x) for x in cpf])
         return {
             0: cpf,
-            1: self.formatar_cpf(cpf)
+            1: self.formatar_cpf(cpf),
+            2: estado
         }
 
     def formatar_cpf(self, cpf):
