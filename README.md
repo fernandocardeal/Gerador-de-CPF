@@ -99,9 +99,16 @@ Agora você usar a API para validar um CPF qualquer, passando-o como parâmetro 
 
 Certifique-se de fornecer o parâmetro `<cpf>` na URL para que a validação seja bem sucedida.
 
-## Contribuindo
+## Contribuição
 
 Sinta-se à vontade para contribuir com melhorias para este projeto. Faça um fork do repositório, faça suas alterações e envie um pull request. Teremos prazer em analisar suas contribuições.
+
+
+### Obrigado aos contribuidores :)
+<a href="https://github.com/fernandocardeal/Gerador-de-CPF/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=fernandocardeal/Gerador-de-CPF" />
+</a>
+
 
 ## Licença
 
